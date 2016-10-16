@@ -15,8 +15,10 @@
 
 (defn coin-flip
   "This method flips a coin and returns either 1 or 0"
-  [n]
-  (str (rand-int 2)))
+  ([n]
+     (str (rand-int 2)))
+  ([]
+     (str (rand-int 2))))
 
 (defn generate-individual
   "This method generates a binary string of size n"
@@ -29,8 +31,7 @@
   (map (fn [x] (generate-individual size)) (range n)))
 
 (defn evolve [population]
-  population
-  )
+  population)
 
 (defn fittest
   "Find the fittest individual"
