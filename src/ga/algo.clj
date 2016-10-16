@@ -17,8 +17,12 @@
   (reduce str (map (fn [gene] (if (<= (rand 1) *mutation-rate*) (core/coin-flip) gene)) individual)))
 
 (defn crossover
-  "This method generates a new individual with gene crossover."
+  "This method generates a new individual with gene crossover at *uniform-rate*"
   [individual1 individual2]
   (reduce str (map (fn [gene1 gene2] (if (<= (rand 1) *uniform-rate*) gene1 gene2 )) individual1 individual2)))
 
-
+(defn evolve
+  "This method generates a new population by mutation and crossover"
+  [population solution]
+  (let [fittest (core/fittest population solution)]
+    (assoc (into [] (map (fn [x] (mutate (crossover (tournament population solution) (tournament population solution)))) population)) 0 fittest)))

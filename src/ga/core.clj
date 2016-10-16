@@ -1,5 +1,6 @@
 (ns ga.core
-  (:gen-class))
+  (:gen-class)
+  (:require [ga.algo :as algo]))
 
 (defn -main
   "I don't do a whole lot ... yet."
@@ -15,7 +16,7 @@
 
 (defn coin-flip
   "This method flips a coin and returns either 1 or 0"
-  ([n]
+  ([x]
      (str (rand-int 2)))
   ([]
      (str (rand-int 2))))
@@ -30,9 +31,6 @@
   [n size]
   (map (fn [x] (generate-individual size)) (range n)))
 
-(defn evolve [population]
-  population)
-
 (defn fittest
   "Find the fittest individual"
   [population solution]
@@ -45,4 +43,6 @@
          generation  1]
     (if (= (fittest population solution) (count solution))
       generation
-      (recur (evolve population) (inc generation)) )))
+      (do
+        (print (str "Generate " generation))
+        (recur (algo/evolve population solution) (inc generation))))))
