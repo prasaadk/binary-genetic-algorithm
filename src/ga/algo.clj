@@ -3,7 +3,7 @@
 
 (def *tournament-size* 5)
 (def *uniform-rate* (double 0.5))
-(def *mutation-rate* (double 0.015))
+(def *mutation-rate* (double 0.15))
 (def elitism? true)
 
 (defn tournament

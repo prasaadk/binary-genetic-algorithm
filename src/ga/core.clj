@@ -41,8 +41,11 @@
   [solution n]
   (loop [population  (populate n (count solution))
          generation  1]
-    (if (= (fittest population solution) (count solution))
-      generation
-      (do
-        (print (str "Generate " generation))
-        (recur (algo/evolve population solution) (inc generation))))))
+    (let [fit (fittest population solution)]
+      (if (= fit solution)
+        (do
+          (print (str "Generate " generation ": Fitness " fit "\n"))
+          generation)
+       (do
+         (print (str "Generate " generation ": Fitness " fit "\n"))
+         (recur (algo/evolve population solution) (inc generation)))))))
