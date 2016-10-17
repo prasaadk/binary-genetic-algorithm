@@ -1,6 +1,6 @@
 # Basic Binary Genetic Algorithm in Clojure
 
-This exercise is based upon [a very elegant explanation of Genetic Algorithms].(http://www.theprojectspot.com/tutorial-post/creating-a-genetic-algorithm-for-beginners/3).
+This exercise is based upon a very elegant explanation of Genetic Algorithms [here](http://www.theprojectspot.com/tutorial-post/creating-a-genetic-algorithm-for-beginners/3).
 
 I have re-implemented it in Clojure, while original solution is in Java.
 
