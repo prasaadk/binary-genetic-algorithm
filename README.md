@@ -2,7 +2,7 @@
 
 This exercise is based upon [a very elegant explanation of Genetic Algorithms].(http://www.theprojectspot.com/tutorial-post/creating-a-genetic-algorithm-for-beginners/3).
 
-The original implementation is in Java. I have re-implemented the same in Clojure.
+I have re-implemented it in Clojure, while original solution is in Java.
 
 ## Basic Process
 
@@ -12,6 +12,10 @@ The original implementation is in Java. I have re-implemented the same in Clojur
 4. Evaluation simulates crossover i.e reproduction and random gene mutation
 5. The genes of the fittest individual often survies via reproduction and helps further generations to reach the goal.
 6. This process is repeated until the fitness requirement is met.
+
+## Installation/Usage
+
+TODO
 
 ## License
 
